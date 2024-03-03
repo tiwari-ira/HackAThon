@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>/******************************************************************************
+        CSS RESET
+        ******************************************************************************/
+        * {
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+          line-height: calc(1em + 0.5rem);
+        }
+        html,
+        body {
+          height: 100%;
+        }
+        img {
+          max-width: 100%;
+          display: block;
+        }
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+        }
+        input,
+        button,
+        textarea,
+        select {
+          font: inherit;
+        }
+        
+        /******************************************************************************
+        YOUR CSS BELOW
+        ******************************************************************************/
+        .nav {
+          width: 100vw;
+          height: 15vh;
+          position: sticky;
+          top: 0;
+          background: #bdc2f8;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 80px;
+          box-shadow: 0px 10px 60px black;
+          z-index: 80000;
+        }
+        
+        .nav ul {
+          list-style-type: none;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+        
+        .nav ul li {
+          margin-right: 20px;
+        }
+        
+        .nav ul li a {
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+        }
+        /******************************************************************************
+        About BELOW
+        ******************************************************************************/
+        #About {
+          width:100vw;
+          height:85vh;
+          background: pink;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: "aboutParagraphSection aboutCaseSection";
+          overflow: hidden;
+        }
+        
+        .aboutParagraphSection {
+          grid-area: aboutParagraphSection;
+          background: #bdc2f8;
+          padding: 100px;
+        }
+        .aboutParagraphSection h3 {
+          font-size: 40px;
+        }
+        .aboutCaseSection {
+          grid-area: aboutCaseSection;
+          display: grid;
+          grid-template-rows: 21.25vh 21.25vh 21.25vh 21.25vh;
+          grid-template-areas:
+            "aboutCase1"
+            "aboutCase2"
+            "aboutCase3"
+            "aboutCase4";
+          overflow: hidden;
+        }
+        .aboutCase1 {
+          grid-area: aboutCase1;
+          background-image: url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/IMG-20240104-WA0001.jpg?v=1709424819109");
+          background-position: 50% 38%;
+          border: solid 3px black;
+          background-size: cover;
+        }
+        
+        .aboutCase2 {
+          grid-area: aboutCase2;
+          background: green;
+          background-image: url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/IMG_7890.jpg?v=1709424809363");
+          background-position: 50% 38%;
+          border: solid 3px black;
+        
+          background-size: cover;
+          box-shadow: 0px 0px 120px #bdc2f8 inset;
+        }
+        
+        .aboutCase3 {
+          grid-area: aboutCase3;
+          background-image: url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/83f1eb69-2fd9-49ba-8e14-55b39bf710cc.JPG?v=1709424923384");
+          background-position: 50% 20%;
+          border: solid 3px black;
+        
+          background-size: cover;
+        }
+        .aboutCase4 {
+          grid-area: aboutCase4;
+        
+          background-image: url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/023CBA04-7403-45F6-A6FC-62E107A9DA77.jpeg?v=1709424925121");
+          background-position: 50% 25%;
+          border: solid 3px black;
+        
+          background-size: cover;
+          background-size: cover;
+        }
+        
+        .aboutCase1Text,
+        .aboutCase2Text,
+        .aboutCase4Text,
+        .aboutCase3Text {
+          height: 100%;
+          width: 15%;
+          z-index: 20;
+          background: black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+        
+          box-shadow: 8px 0 20px -3px black, 60px 0 100px -3px black;
+        }
+        .caseText p {
+          font-size: 0px;
+          color: #fff8e7;
+        }
+        .caseText:hover p {
+          font-size: 15px;
+          transition: font-size 1.7s;
+        }
+        
+        .caseText:hover {
+          width: 100%;
+          transition: width 1.3s;
+        }
+        .arrow {
+          border: solid #fff8e7;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 9px;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+        
+        </style>
+</head>
+<body>
+   <div class="nav">
+      <ul>
+        <li class="Home"><a href="donorHomePage.html">PhilaConnect</a></li>
+        <li class="About"><a href="about.html">About</a></li>
+        <li class="Donor"><a href="donor.html">Donor</a></li>
+        <li class="Charity"><a href="charity.html">Charity</a></li>
+        <li class="Contact"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  
+  <div id="About" class="aboutPageContainer">
+    <div class="aboutParagraphSection">
+          <h3>About us</h3>
+          <p>
+            We are Phila Connect, a non profit organization consisting of four
+            high schoolers that are empowered to spark a change in our
+            community. Phila Connect links charities to donors. Our vision is to
+            connect people in order to create a community where everyone feels
+            like they are supported and that they feel like they have all the
+            essentials they need. In our organization, we work together to
+            create a better environment where everyone should feel like they
+            belong. We also work with various local charities and donors, in
+            order to help other running organizations as well as strengten our
+            own. We want to foster an enviroment where every individual in the
+            world feels connected to others, which is a part of Phila Connect's
+            vision. As a part of our organization, we communicate and
+            collaborate to provide essentials such as sanitary and hygiene
+            products, food, and other essentials to individuals and charities in
+            need. We hope you can help us provide support to our community by
+            becoming a donor!
+          </p>
+        </div>
+     <div class="aboutCaseSection">
+          <div class="aboutCase1">
+            <div class="aboutCase1Text caseText">
+              <p>
+                Hi! I'm Evy Chan and I am a Junior at Stevenson High School. I
+                develop the AI/ML.
+              </p>
+              <i class="arrow"></i>
+            </div>
+          </div>
+
+          <div class="aboutCase2">
+            <div class="aboutCase2Text caseText">
+              <p>
+                Hi! I'm Rhea Gupte and I'm a Sophomore at SHS. I serve as the
+                Art and Design leader.
+              </p>
+              <i class="arrow"></i>
+            </div>
+          </div>
+          <div class="aboutCase3">
+            <div class="aboutCase3Text caseText">
+              <p>
+                Hi! I'm Hansuja Yalavarthi, I'm a Sophomore at SHS. I serve as
+                the AI/ML deployment leader.
+              </p>
+              <i class="arrow"></i>
+            </div>
+          </div>
+          <div class="aboutCase4">
+            <div class="aboutCase2Text caseText">
+              <p>
+                Hi! I'm Ira Tiwari and I'm a Sophomore at Stevenson. I serve as
+                the Front End Web Developer.
+              </p>
+              <i class="arrow"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  
+  
+  
+  
+</body>
+</html>

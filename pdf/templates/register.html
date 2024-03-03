@@ -1,0 +1,92 @@
+<!Doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}" />
+  <script src="{% static 'jquery.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" /> 
+	<script src="{% static 'forge.all.min.js' %}"></script>
+	
+</head>
+<body>
+{
+	<div class="container">
+		<div class="row">
+			<div class="offset-md-4 col-md-4">
+				<div class="login-form">
+					<h2 class="text-white">New User </h2>
+					<form method="POST" action="">
+						{% csrf_token %}
+						<div class="form-group">
+							<label>First Name *</label>
+					
+							<input required name="fname" type="text" class="form-control1"  required autocomplete="off">
+						</div>
+						<div class="form-group">
+							
+							<label>Last Name *</label>
+					
+							<input required name="lname" type="text" class="form-control1"  required autocomplete="off">
+						</div>
+						<div class="form-group">
+							
+							<label>Username *</label>
+					
+							<input required name="username" type="username" class="form-control1"  required autocomplete="off">
+						</div>
+						<div class="form-group">
+
+							<label>Email *</label>
+							<input required name="email" type="email" class="form-control1" autocomplete="off">
+							<p style="color:red">{{error}}</p>
+						</div>	
+						<div class="form-group">
+
+							<label>Password *</label>
+							<input required name="password" type="password" class="form-control1" id="pwd"  autocomplete="off">
+							<script type="text/Javascript">
+								function generateHash1()
+								{
+									var plainText = document.getElementById('pwd').value;
+									var md = forge.md.sha256.create();  
+									md.start();  
+									md.update(plainText, "utf8");  
+									var hashText = md.digest().toHex();  
+									document.getElementById("pwd").value = hashText;
+									var plainText1 = document.getElementById('pwd1').value;
+									var md1 = forge.md.sha256.create();  
+									md1.start();  
+									md1.update(plainText1, "utf8");  
+									var hashText1 = md1.digest().toHex();  
+									document.getElementById("pwd1").value = hashText1;
+								}        
+							</script>
+						</div>	
+						<div class="form-group">
+							<label>Re-enter Password *</label>
+							<input type="password" class="form-control1"  required name = "psw2" id=pwd1 autocomplete="off">
+						</div>
+						<div class="form-group">
+							<img src="/media/{{ran1}}" >
+							<br>
+							<input name="inp" style="margin-top:10px;" type="text" class="form-control1" placeholder="Enter captcha" required autocomplete="off"><br/><br/>
+						</div>
+						<button type="submit" class="btn btn-default" onclick="generateHash1()">Register</button>	
+						<p style="color:red">{{error}}</p>
+						<p style="color:red">{{error1}}</p>	
+</form>
+<script>
+							window.onload = () => {
+								document.getElementById("captcha").disabled = true;
+							}
+						</script>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

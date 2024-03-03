@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+{% load static %}
+{% if request.user.is_authenticated %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="{% static 'jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="{% static 'popper.min.js' %}" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap.min.js' %}" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<style>
+h2 {
+text-align: center;
+height: 50px;
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+background-image:url('i.jpg');
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/******************************************************************************
+CSS RESET
+******************************************************************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/******************************************************************************
+YOUR CSS BELOW
+******************************************************************************/
+
+.container 
+{
+  height:100vh;
+  width:100vw;
+  display:grid;
+  grid-template-rows:10vh 90vh;
+  grid-template-areas:"nav"
+    "main";
+}
+
+.nav
+{
+  grid-area:nav;
+  background:#bdc2f8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.nav {
+  width: 100vw;
+  height: 15vh;
+  position: sticky;
+  top: 0;
+  background: #BDC2F8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  box-shadow: 0px 17px 60px black;
+  z-index:80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li {
+  margin-right: 20px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+.main{
+  width: 100%; 
+  height: 100%;
+  grid-area:main;
+  background:purple;
+  background-image:url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/Untitled%20design%20(6).png?v=1709409116209");
+   background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+
+
+}
+
+button
+{
+  z-index:100;
+  margin-block:3vh;
+  width:20vw;
+  height:8vh;
+  background: rgba(189, 194, 248, 0.6);
+
+  border:3px solid white;
+  outline: 5px solid white;
+  outline-offset: 4px;
+  border-radius:30px;
+  
+}
+
+button:hover
+{
+    background: rgba(189, 194, 248, 0.8);
+}
+
+
+a
+{
+  color:black;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+  <div class="bs-example">
+    <nav class="nav">
+        <a href="#" class="navbar-brand">PhilaConnect </a>
+        <a href="About" class="navbar-brand">About</a>
+        <a href="#Donor" class="navbar-brand">Donor</a>
+        <a href="#Charity" class="navbar-brand">Charity</a>
+        <a href="Contact" class="navbar-brand">Contact</a>
+        {% if request.user.is_superuser %}
+        <a href="{% url 'data' %}">Report</a>
+        {% endif %}
+       
+        <div class="navbar-brand" id="navbarCollapse">
+            <form class="form-inline ml-auto">
+                <a href="{% url 'change' %}" class="navbar-brand">Change Password</a>
+                <a href="{% url 'logout' %}" class="navbar-brand">Logout</a>
+            </form>
+        </div>
+    </nav>
+</div>
+
+
+<div class="row">
+  <div class="container">
+    
+    
+    
+    
+    <div class="main">
+      <a href="DonorHomePage">
+        <button class="donorButton">Donor</button></a
+      >
+
+      <a href="Charity">
+        <button class="charityButton">Charity</button></a
+      >
+    </div>
+  </div>
+
+  
+</div>
+</body>
+</html>
+{% endif %}

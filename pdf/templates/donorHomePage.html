@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  
+<style>
+  /******************************************************************************
+CSS RESET
+******************************************************************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/******************************************************************************
+YOUR CSS BELOW
+******************************************************************************/
+.nav {
+  width: 100vw;
+  height: 15vh;
+  position: sticky;
+  top: 0;
+  background: #bdc2f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  box-shadow: 0px 10px 60px black;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li {
+  margin-right: 20px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.container {
+  width: 100vw;
+  background: red;
+  display: grid;
+  grid-template-rows: 85vh 25vh;
+  grid-template-areas:
+    "Home"
+    "Footer";
+}
+/******************************************************************************
+hoem BElow
+******************************************************************************/
+#Home {
+  grid-area: Home;
+  width: 100%;
+  overflow: hidden;
+  background: #fff8e7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+span {
+  border-right: 0.05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.home h4
+{
+  margin-top:50px;
+  margin-bottom:0px;
+}
+
+.home button
+{
+  margin-block:40px;
+ width:20vw;
+  height:8vh;
+  background: rgba(189, 194, 248, 0.6);
+  border:3px solid white;
+  outline: 5px solid white;
+  outline-offset: 4px;
+  border-radius:30px;
+}
+.home button:hover
+{
+    background: rgba(189, 194, 248, 0.8);
+  
+}
+
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  grid-area:Footer;
+  background:#bdc2f8;
+  padding-block:0.5vh;
+
+}
+
+.fa {
+  font-size: 20px;
+  color: white;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:white;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #BDC2F8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:white;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:white;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.7s, font-size 0.7s
+}
+
+.nav ul li a:hover {
+  color: black;
+  font-size: 20px; 
+}
+</style>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Donors</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+
+    <script src="static/script.js" defer></script>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="Home"><a href="donorHomePage">PhilaConnect</a></li>
+        <li class="About"><a href="about.html">About</a></li>
+        <li class="Charity"><a href="charity.html">Charity</a></li>
+        <li class="Contact"><a href="Contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+  <!---------------------------------------------------------------------------------------------------------
+                                                      HOME
+------------------------------------------------------------------------------------------------------------>
+      <div id="Home" class="home">
+        <h1>Welcome Donor</h1>
+        <h4>Ready To Make A Change?</h4>
+        <a href="DonorLogin">
+          <button class="donorButton">Donate Now</button></a
+        >
+      </div>
+     
+
+        <!--------------------------------------------------------------------------------------------------------
+                      foOTER
+------------------------------------------------------------------------------------------------------------>
+<footer>
+  <div class="footerTop">
+    <div class="contactSocialMedia">
+   <a href="#" class="fa fa-facebook"></a>
+   <a href="#" class="fa fa-twitter"></a>
+   <a href="#" class="fa fa-instagram"></a>
+   <a href="#" class="fa fa-snapchat"></a>
+ </div>
+    <div class="footerNav">
+      <ul>
+   <li class="Home"><a href="donorHomePage">PhilaConnect</a></li>
+   <li class="About"><a href="about.html">About</a></li>
+   <li class="Charity"><a href="charity.html">Charity</a></li>
+   <li class="Contact"><a href="contact.html">Contact</a></li>
+ </ul>
+      
+    </div>
+    
+    <div class="peopleFooter">
+      
+      
+      <div>
+        Hansuja
+      </div>
+      <div>
+        |
+      </div>
+      <div>
+        Ira
+      </div>
+      <div>
+        |
+      </div>
+      <div>
+        Evy
+      </div>
+      <div>
+        |
+      </div>
+      <div>
+        Rhea
+      </div>
+      
+      
+    </div>
+  </div>
+  <div class="footerDivider">
+    <hr>
+  </div>
+  <div class="footerBottom">
+    <h3>
+      1 Stevenson Dr, Lincolnshire, IL 60069
+    </h3>
+    <h6>
+      @ Kitchen Coders | All Rights Reserved
+    </h6>
+   
+  </div>
+ 
+ </footer>
+      
+    
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var dataText = ["Welcome Donor :)"];
+
+        function typeWriter(text, i, fnCallback) {
+          if (i < text.length) {
+            document.querySelector("h1").innerHTML =
+              text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+            setTimeout(function () {
+              typeWriter(text, i + 1, fnCallback);
+            }, 100);
+          } else if (typeof fnCallback == "function") {
+            setTimeout(fnCallback, 700);
+          }
+        }
+
+        function StartTextAnimation(i) {
+          if (typeof dataText[i] == "undefined") {
+            setTimeout(function () {
+              StartTextAnimation(0);
+            }, 20000);
+          }
+
+          if (i < dataText[i].length) {
+            typeWriter(dataText[i], 0, function () {
+              StartTextAnimation(i + 1);
+            });
+          }
+        }
+        StartTextAnimation(0);
+      });
+    </script>
+  </body>
+</html>

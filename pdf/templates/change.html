@@ -1,0 +1,91 @@
+<!Doctype html>
+{% load static %}
+{% if request.user.is_authenticated %}
+<html lang="en">
+<head>
+  <title>Change Password Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--- use bootstrap4 cdn --->
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}" />
+  <script src="{% static 'jquery.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
+  <script src="{% static 'forge.all.min.js'%}"></script>
+    <!--- use font-awesome css --->
+	<!--- use custom css --->
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" /> 
+	<style>
+		table, th, td {
+		background-color: white;
+		  border: 1px solid black;
+		  border-collapse: collapse;
+		}
+		</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="offset-md-4 col-md-4">
+				<div class="login-form">
+					<h2 class="text-white">Login </h2>
+					<form method="POST" action="">
+						{% csrf_token %}
+						<div class="form-group">
+							
+							<label>Username *</label>
+					
+							<input name="username" type="username" class="form-control1" placeholder="Enter username" required autocomplete="off">
+						</div>
+						<div class="form-group">
+
+							<label>Old Password *</label>
+							<input name="password" type="password" id="pwd" class="form-control1" placeholder="password"  autocomplete="off">
+							<script type="text/Javascript">
+							function generateHash()
+							{
+            					var plainText = document.getElementById('pwd').value;
+	    						var md = forge.md.sha256.create();  
+            					md.start();  
+            					md.update(plainText, "utf8");  
+								var hashText = md.digest().toHex();
+								var m="{{ran}}";
+								hashText=hashText+m;  
+                                document.getElementById("pwd").value = hashText;
+                                var plainText = document.getElementById('pwd2').value;
+								var md = forge.md.sha256.create();  
+								md.start();  
+								md.update(plainText, "utf8");  
+                                var hashText = md.digest().toHex(); 
+                                hashText=hashText+m; 
+								document.getElementById("pwd2").value = hashText;
+								var plainText1 = document.getElementById('pwd1').value;
+								var md1 = forge.md.sha256.create();  
+								md1.start();  
+                                md1.update(plainText, "utf8");  
+                                var hashText1 = md1.digest().toHex();  
+                                hashText1=hashText1+m; 
+								document.getElementById("pwd1").value = hashText1;
+        					}        
+							</script>
+                        </div>
+                        <div class="form-group">
+							<label>New Password *</label>
+							<input type="password" class="form-control1"  required name = "password1" id=pwd2 autocomplete="off">
+                        </div>
+                        <div class="form-group">
+							<label>Re-enter New Password *</label>
+							<input type="password" class="form-control1"  required name = "password2" id=pwd1 autocomplete="off">
+						</div>
+						<div class="form-group">
+						<button type="submit" class="btn btn-default" onclick="generateHash()">change Password</button>
+						</div>
+						<br>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+{% endif %}

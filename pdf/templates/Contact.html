@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /******************************************************************************
+CSS RESET
+******************************************************************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/******************************************************************************
+YOUR CSS BELOW
+******************************************************************************/
+.nav {
+  width: 100vw;
+  height: 15vh;
+  position: sticky;
+  top: 0;
+  background: #bdc2f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  box-shadow: 0px 10px 60px black;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li {
+  margin-right: 20px;
+}
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.7s, font-size 0.7s
+}
+
+.nav ul li a:hover {
+  color: black;
+  font-size: 20px; 
+}
+
+/******************************************************************************
+ONTACT BELOW
+******************************************************************************/
+
+.contact
+{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image:url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/download.jpg?v=1709453951606");
+   background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  
+  
+  
+}
+.contactFormContainer
+{
+  width:40vw;
+  height:90%;
+ 
+    display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding-right:20px;
+  padding-left:20px;
+  padding-block:20px;
+  border: 3px solid white;
+  outline: 2px solid #bdc2f8;
+  outline-offset: -8px;
+	border-radius: 10px;
+background: rgba(255, 248, 231, 0.4);
+
+}
+
+.contactForm
+{
+  margin-top:20px;
+  
+  display:grid;
+  grid-gap:10px;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr 2fr 1fr;
+  grid-template-areas:
+    "name email"
+    "phone subject"
+    "message message"
+    "submit submit"
+    
+    ;
+
+}
+
+
+.name
+{
+  grid-area:name;
+  
+}
+
+
+.email
+{
+  grid-area:email;
+}
+
+.number
+{
+  grid-area:phone;
+ 
+}
+
+.subject
+{
+  grid-area:subject;
+ 
+}
+
+.message
+{
+  grid-area:message;
+ 
+}
+
+.submit
+{
+  grid-area:submit;
+  
+  display:flex;
+  justify-content:center;
+  
+}
+.name input,
+.email input,
+.number input,
+.subject select
+{
+  width:100%;
+  height:50%;
+  border: 3px solid white;
+	border-radius: 5px;
+background: rgba(255, 248, 231, 0.8);
+}
+
+.message textarea
+{
+   width:100%;
+  height:100%;
+  border: 3px solid white;
+	border-radius: 5px;
+background: rgba(255, 248, 231, 0.8);
+}
+
+.submit input
+{
+  width:30%;
+  height:100%;
+  background: rgba(189, 194, 248, 0.6);
+
+  border:5px solid white;
+  outline: 3px solid white;
+  outline-offset: -10px;
+  border-radius:30px;
+  
+}
+
+
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  width:100vw;
+  height:25vh;
+  background:#bdc2f8;
+  padding-block:0.5vh;
+
+}
+
+.fa {
+  font-size: 20px;
+  color: white;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:white;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #BDC2F8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:white;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:white;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="Home"><a href="donorHomePage.html">PhilaConnect</a></li>
+        <li class="About"><a href="about.html">About</a></li>
+       
+        <li class="Charity"><a href="charity.html">Charity</a></li>
+        <li class="Contact"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="contact">
+      <div class="contactFormContainer">
+        <h1>Contact Us</h1>
+        <p>
+          If you have any questions regarding Phila Connect, please do not
+          hesitate to contact us. It would be very helpful for the success of
+          our organization if you could fill out the short questions below. We
+          are avaliable via our social media platforms as well as our virtual
+          daily drop in sessions. Feel free to inquire or ask any questions at
+          all regarding our organization as we would love to connect with you!
+          We are looking forward to getting back to you regarding your inquiry
+          at our earliest time.
+        </p>
+
+        <form class="contactForm">
+          <div class="name">
+            <label for="fullname">Enter Name</label><br />
+            <input type="text" id="fullname" name="fullname" />
+          </div>
+          <div class="email">
+            <label for="email">Enter Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="number">
+            <label for="phone">Enter Phone number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            />
+          </div>
+          <div class="subject">
+            <label for="cars">Subject</label>
+            <select name="cars" id="cars" form="carform">
+              <option value="Registration">Registration</option>
+              <option value="Entry">Form Entry</option>
+              <option value="Compat">Device Compatability</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="message">
+            <textarea rows="4" cols="50" name="comment" form="usrform">
+How may we help?</textarea
+            >
+          </div>
+
+          <div class="submit">
+            <input type="button" onclick="alert('Submiting')" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    
+<!--------------------------------------------------------------------------------------------------------
+                      foOTER
+------------------------------------------------------------------------------------------------------------>
+     <footer>
+       <div class="footerTop">
+         <div class="contactSocialMedia">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-snapchat"></a>
+      </div>
+         <div class="footerNav">
+           <ul>
+        <li class="Home"><a href="donorHomePage">PhilaConnect</a></li>
+        <li class="About"><a href="about.html">About</a></li>
+        <li class="Charity"><a href="charity.html">Charity</a></li>
+        <li class="Contact"><a href="contact.html">Contact</a></li>
+      </ul>
+           
+         </div>
+         
+         <div class="peopleFooter">
+           
+           
+           <div>
+             Hansuja
+           </div>
+           <div>
+             |
+           </div>
+           <div>
+             Ira
+           </div>
+           <div>
+             |
+           </div>
+           <div>
+             Evy
+           </div>
+           <div>
+             |
+           </div>
+           <div>
+             Rhea
+           </div>
+           
+           
+         </div>
+       </div>
+       <div class="footerDivider">
+         <hr>
+       </div>
+       <div class="footerBottom">
+         <h3>
+           1 Stevenson Dr, Lincolnshire, IL 60069
+         </h3>
+         <h6>
+           @ Kitchen Coders | All Rights Reserved
+         </h6>
+        
+       </div>
+      
+      </footer>
+      
+    
+
+  
+  
+  
+  
+</body>
+</html>
+    
+    
+  </body>
+</html>

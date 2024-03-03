@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  
+<style>
+/******************************************************************************
+CSS RESET
+******************************************************************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/******************************************************************************
+YOUR CSS BELOW
+******************************************************************************/
+body
+{
+  background-image:url("https://cdn.glitch.global/d1e7cb44-b148-4c27-8556-9e03b3a83278/SHSHACKS%202024%20(1).png?v=1709417624367");
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  
+}
+
+
+.container{
+	width: 500px;
+	padding: 30px;
+	border: 1px solid #eeeeee;
+	border-radius: 10px;
+background: rgba(189, 194, 248, 0.8);
+  
+}
+h4{
+	margin-bottom: 10px;
+	font-size: 24px;
+	color: white;
+}
+input{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+textarea{
+	width: 100%;
+	padding: 10px;
+}
+#submit{
+	border: none;
+	background-color: orangered;
+	color: white;
+	width: 200px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+#submit:hover{
+	background-color: #333333;
+}
+
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.7s, font-size 0.7s
+}
+
+.nav ul li a:hover {
+  color: black;
+  font-size: 20px; 
+}
+
+</style>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Donors</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+
+    <script src="static/script.js" defer></script>
+  </head>
+  <body>
+    
+  <!---------------------------------------------------------------------------------------------------------
+                                                      HOME
+------------------------------------------------------------------------------------------------------------>
+<body>
+	<div class="container">
+		<form method="post" action="https://script.google.com/macros/s/AKfycbz1SqgCfT8rIb3FUZd9TJR0K_RPxKND_I3Ox62NxVRsBoV1jUr7q6GukkoIfMnnaZ8e/exec" name="contact-form">
+			<h4>Donations</h4>
+			<input type="text" name="your-name" placeholder="Name">
+      <input type="email" name="your-email" placeholder="Email">
+			<input type="organization" name="your-username" placeholder="Organization">
+			<input type="amount" name="your-password" placeholder="Pledge Amount">
+			<input type="submit" value="Submit" id="submit">
+		</form>
+	</div>
+
+	<script src="donor.js"></script>
+</body>
+
+       
+      
+    
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var dataText = ["Welcome Donor :)"];
+
+        function typeWriter(text, i, fnCallback) {
+          if (i < text.length) {
+            document.querySelector("h1").innerHTML =
+              text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+            setTimeout(function () {
+              typeWriter(text, i + 1, fnCallback);
+            }, 100);
+          } else if (typeof fnCallback == "function") {
+            setTimeout(fnCallback, 700);
+          }
+        }
+
+        function StartTextAnimation(i) {
+          if (typeof dataText[i] == "undefined") {
+            setTimeout(function () {
+              StartTextAnimation(0);
+            }, 20000);
+          }
+
+          if (i < dataText[i].length) {
+            typeWriter(dataText[i], 0, function () {
+              StartTextAnimation(i + 1);
+            });
+          }
+        }
+        StartTextAnimation(0);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+body{
+    font-family:'Pacifico';
+    background-color: #778899;
+}
+.A{
+    min-height:250px;
+}
+.load{
+background-color:white ;
+border-radius: 30px;
+font-family:'Pacifico';
+padding-top: 30px;
+padding-left: 20px;
+padding-bottom: 30px;
+padding-right: 20px;
+border-color: floralwhite;
+min-height: 300px;
+}
+.in{
+    border-style: solid;
+    border-color:silver;
+    min-height: 250px;
+    border-radius: 30px; 
+    transition: .3s ease;
+    text-align: center;
+    padding-top:15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Pacifico';
+    font-size: 22px;
+
+}
+.in:hover{
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    border-color:skyblue;
+    background-color: white;
+    border-style: solid;
+    min-height:350px;
+    padding-top:15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+
+    
+}
+.Up{
+    min-height: 50px;
+}
+.Upload
+{
+    min-height: 40px;
+    min-width: 20px;
+    background-color: burlywood;
+    padding-top: 10px;
+    margin-top:10px;
+}
+.fileimg{
+background-position: center;
+background-size: 40px 40px;
+min-width: 30px;
+min-height: 100px;
+margin-bottom: 5px;
+margin-top: 15px;
+}
+.intake{
+    text-align: center;
+    padding-left: 50px;
+    border-radius: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-top:15px;
+    margin-right:20px;
+    margin-bottom: 15px;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+.form{
+
+    align-items: center;
+    font-family: "Pacifico";
+    text-align: center;
+    color:skyblue ;
+    font-size: 22px;
+}
+label{
+    color: skyblue;
+    font-family: "Pacifico";
+    font-size: 22px;
+
+}
+input[type="file"]
+{
+    display:none;
+}
